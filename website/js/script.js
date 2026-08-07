@@ -81,7 +81,7 @@ window.addEventListener("scroll", () => {
 
 });
 let lastScrollTop = 0;
-const navbar = document.getElementById("navbar");
+const navbar = document.querySelector(".navbar");
 
 window.addEventListener("scroll", () => {
     // Only on mobile
@@ -149,4 +149,24 @@ menuBtn.innerHTML="☰";
 
 }
 
+});
+
+const menuBtn = document.getElementById("menu-btn");
+const navLinks = document.getElementById("nav-links");
+
+menuBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+
+    if (navLinks.classList.contains("active")) {
+        menuBtn.innerHTML = "✕";
+    } else {
+        menuBtn.innerHTML = "☰";
+    }
+});
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+        menuBtn.innerHTML = "☰";
+    });
 });
