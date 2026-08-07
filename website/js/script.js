@@ -117,3 +117,36 @@ window.addEventListener("scroll", () => {
 
     lastScroll = currentScroll;
 });
+
+
+const menuBtn=document.getElementById("menu-btn");
+
+const nav=document.getElementById("nav-links");
+
+menuBtn.onclick=function(){
+
+nav.classList.toggle("active");
+
+if(nav.classList.contains("active")){
+
+menuBtn.innerHTML="✕";
+
+}else{
+
+menuBtn.innerHTML="☰";
+
+}
+
+}
+
+document.querySelectorAll(".nav-links a").forEach(link=>{
+
+link.onclick=function(){
+
+nav.classList.remove("active");
+
+menuBtn.innerHTML="☰";
+
+}
+
+});
