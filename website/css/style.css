@@ -939,3 +939,19 @@ z-index:999;
     padding:0;
     opacity:0;
 }
+/* Smooth animation */
+#navbar {
+    transition: transform 0.35s ease;
+}
+
+/* Hide navbar */
+#navbar.hide-nav {
+    transform: translateY(-100%);
+}
+
+/* Only apply on mobile */
+@media (min-width: 769px) {
+    #navbar.hide-nav {
+        transform: translateY(0);
+    }
+}
