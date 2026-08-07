@@ -530,32 +530,68 @@ font-size:40px;
 MOBILE
 =========================================*/
 
-@media(max-width:768px){
+@media (max-width:768px){
+
+.top-bar{
+    display:none;
+}
 
 header .container{
-
-flex-wrap:wrap;
-justify-content:center;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:nowrap;
 }
 
 .logo{
+    margin:0;
+}
 
-justify-content:center;
-margin-bottom:15px;
+.menu-btn{
+    display:block;
+    font-size:30px;
+    color:#fff;
+    cursor:pointer;
 }
 
 nav{
-
-width:100%;
+    position:relative;
+    width:auto;
 }
 
-nav ul{
+.nav-links{
+    position:absolute;
+    top:70px;
+    right:0;
+    width:260px;
+    background:#0b2d5c;
 
-flex-direction:column;
-align-items:center;
-gap:15px;
+    display:none;
+    flex-direction:column;
+
+    border-radius:10px;
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
 }
 
+.nav-links.active{
+    display:flex;
+}
+
+.nav-links li{
+    width:100%;
+}
+
+.nav-links a{
+    display:block;
+    padding:16px 20px;
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.hero h1{
+    font-size:32px;
+}
+
+}
 .hero{
 
 padding:60px 20px;
