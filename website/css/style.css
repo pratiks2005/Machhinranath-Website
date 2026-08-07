@@ -955,3 +955,6 @@ z-index:999;
         transform: translateY(0);
     }
 }
+header{
+    transition: transform 0.35s ease;
+}
