@@ -100,3 +100,20 @@ window.addEventListener("scroll", () => {
 
     lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
 });
+let lastScroll = 0;
+const header = document.querySelector("header");
+
+window.addEventListener("scroll", () => {
+
+    if (window.innerWidth > 768) return;
+
+    const currentScroll = window.pageYOffset;
+
+    if (currentScroll > lastScroll && currentScroll > 100) {
+        header.style.transform = "translateY(-100%)";
+    } else {
+        header.style.transform = "translateY(0)";
+    }
+
+    lastScroll = currentScroll;
+});
