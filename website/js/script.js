@@ -80,3 +80,23 @@ window.addEventListener("scroll", () => {
     }
 
 });
+let lastScrollTop = 0;
+const navbar = document.getElementById("navbar");
+
+window.addEventListener("scroll", () => {
+    // Only on mobile
+    if (window.innerWidth > 768) return;
+
+    let currentScroll =
+        window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScroll > lastScrollTop && currentScroll > 100) {
+        // Scrolling down
+        navbar.classList.add("hide-nav");
+    } else {
+        // Scrolling up
+        navbar.classList.remove("hide-nav");
+    }
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+});
